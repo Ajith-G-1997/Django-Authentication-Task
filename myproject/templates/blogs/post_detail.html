@@ -1,0 +1,16 @@
+{% extends 'blogs/base.html' %}
+
+{% block content %}
+<a href="{% url 'post_update' post.id %}" type="button" class="btn btn-primary">Update</a>
+                        <a href="{% url 'post_delete' post.id %}" type="button" class="btn btn-primary">Delete</a>
+    <div class="container">
+        <div class="card my-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.description }}</p>
+                <p class="card-text">Created: {{ post.created_date }}</p>
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid">
+            </div>
+        </div>
+    </div>
+{% endblock %}
